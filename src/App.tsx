@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Outlet } from "react-router-dom";
+import "./App.css";
+import Navbar from "./component/navbar/Navbar";
+import Footer from "./component/footer/FooterComponent";
 
+/**
+ * UI function component for the main app.
+ *
+ * @returns Main App ui
+ */
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="sticky top-0">
+        <Navbar />
+      </div>
+      <div>
+        <Outlet />
+        <div className=" fixed top-0 left-0 right-0 bottom-[1000] outline"></div>
+      </div>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
