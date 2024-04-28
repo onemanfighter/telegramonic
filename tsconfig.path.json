@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@localization": ["src/localization"],
+      "@providers": ["src/providers"],
+      "@store": ["src/store"],
+      "@store/slice": ["src/store/slice"],
+      "@selectors": ["src/store/selectors"]
+    }
+  }
+}

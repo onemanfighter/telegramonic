@@ -1,64 +1,59 @@
-import { NavLink } from "react-router-dom";
-import NavLinkComponent from "./NavLinkComponent";
+import { NavLink } from 'react-router-dom';
+import NavLinkComponent from './NavLinkComponent';
 import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
   Drawer,
   IconButton,
-} from "@mui/material";
-import { Menu as MenuIcon } from "@mui/icons-material";
-import { ExpandMoreOutlined } from "@mui/icons-material";
-import { Fragment, useState } from "react";
-import { NavbarMaxWidth } from "../styles/navbar/NavbarStyles";
+} from '@mui/material';
+import { Menu as MenuIcon } from '@mui/icons-material';
+import { ExpandMoreOutlined } from '@mui/icons-material';
+import { Fragment, useState } from 'react';
+import { NavbarMaxWidth } from '../styles/navbar/NavbarStyles';
 
 // Type definitions for navigation menu
 type NavItem = { name: string; path: string };
 
 export type NavbarProps = {
-  navbarTitle: string;
+  navbarTitle?: string;
   navbarIcon?: string;
-  navBarMenuItems: NavItem[];
+  navBarMenuItems?: NavItem[];
 };
 
-const props: NavbarProps = {
-  navbarTitle: "Telegramonic.com",
+const dummyProps: NavbarProps = {
+  navbarTitle: 'Telegramonic.com',
   navBarMenuItems: [
-    { name: "Home", path: "/home" },
-    { name: "Channels", path: "/channels" },
-    { name: "Groups", path: "/groups" },
-    { name: "Stickers", path: "/stickers" },
-    { name: "Bots", path: "/bots" },
-    { name: "Blogs", path: "/blogs" },
-    { name: "Themes", path: "/themes" },
-    { name: "Games", path: "/games" },
+    { name: 'Home', path: '/home' },
+    { name: 'Channels', path: '/channels' },
+    { name: 'Groups', path: '/groups' },
+    { name: 'Stickers', path: '/stickers' },
+    { name: 'Bots', path: '/bots' },
+    { name: 'Blogs', path: '/blogs' },
+    { name: 'Themes', path: '/themes' },
+    { name: 'Games', path: '/games' },
   ],
 };
-
-/**
- * Proptypes for NavComponent.
- */
-export interface INavbarComponentProps {}
 
 /**
  * Functional component for the navigation bar.
  *
  * @returns Navigation bar.
  */
-export default function NavbarComponent() {
+export default function NavbarComponent(props: NavbarProps = dummyProps) {
   const [showNav, setShowNav] = useState(false);
   return (
     <>
       <div
         className={
           `${NavbarMaxWidth}` +
-          "xl:m-auto lg:mx-10 m-3 flex justify-between items-center shadow-lg rounded-md px-5 py-3 bg-slate-200"
+          'xl:m-auto lg:mx-10 m-3 flex justify-between items-center shadow-lg rounded-md px-5 py-3 bg-slate-200'
         }
       >
         <div className="flex flex-row items-start mx-3">
           <NavLink to="/" className="hover:scale-105 transition-all">
             <img
-              src={require("../../assets/images/LogoNoBackground.png")}
+              src={require('../../assets/images/LogoNoBackground.png')}
               className="h-8 md:h-12 me-3"
               alt="Telegramonic.com Logo"
               loading="lazy"
@@ -80,7 +75,7 @@ export default function NavbarComponent() {
           </IconButton>
         </div>
         <div className="flex-col items-start justify-start hidden lg:block">
-          <NavigationButtonProvider />
+          <NavigationButtonProvider {...props} />
         </div>
       </div>
       <NavigationButtonUnderHood
@@ -99,23 +94,26 @@ export default function NavbarComponent() {
  * @param props Props for the navigation bar.
  * @returns Navigation bar.
  */
-function NavigationButtonUnderHood(props: {
-  showNav: boolean;
-  handler: () => void;
-}) {
+function NavigationButtonUnderHood(
+  props: {
+    showNav: boolean;
+    handler: () => void;
+  },
+  navProps: NavbarProps,
+) {
   return (
     <div className="block md:hidden">
       <Fragment>
-        <Drawer anchor={"left"} open={props.showNav} onClose={props.handler}>
+        <Drawer anchor={'left'} open={props.showNav} onClose={props.handler}>
           <img
-            src={require("../../assets/images/LogoNoBackground.png")}
+            src={require('../../assets/images/LogoNoBackground.png')}
             className="h-8 md:h-10 me-3 m-1"
             alt="Telegramonic.com Logo"
             loading="lazy"
           />
           <div className=" mx-3 flex flex-col text-sm md:text-base lg:hidden w-36 md:w-56">
-            <NavlistProvider />
-          </div>{" "}
+            <NavListProvider {...navProps} />
+          </div>{' '}
         </Drawer>
       </Fragment>
     </div>
@@ -127,28 +125,29 @@ function NavigationButtonUnderHood(props: {
  *
  * @returns Navigation bar.
  */
-function NavlistProvider() {
+function NavListProvider(props: NavbarProps) {
   return (
     <>
       <div className=" flex flex-col m-1">
-        {props.navBarMenuItems.map((item) => {
-          return (
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreOutlined />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <NavLink to={item.path}>{item.name}</NavLink>
-              </AccordionSummary>
-              <AccordionDetails sx={{ m: 1 }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </AccordionDetails>
-            </Accordion>
-          );
-        })}
+        {props.navBarMenuItems &&
+          props.navBarMenuItems.map((item) => {
+            return (
+              <Accordion key={item.name}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreOutlined />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <NavLink to={item.path}>{item.name}</NavLink>
+                </AccordionSummary>
+                <AccordionDetails sx={{ m: 1 }}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
+                  eget.
+                </AccordionDetails>
+              </Accordion>
+            );
+          })}
       </div>
     </>
   );
@@ -159,12 +158,19 @@ function NavlistProvider() {
  *
  * @returns Navigation bar.
  */
-function NavigationButtonProvider() {
+function NavigationButtonProvider(props: NavbarProps) {
   return (
     <div className="flex flex-row">
-      {props.navBarMenuItems.map((item) => {
-        return <MenuListComposition path={item.path} name={item.name} />;
-      })}
+      {props.navBarMenuItems &&
+        props.navBarMenuItems.map((item) => {
+          return (
+            <MenuListComposition
+              path={item.path}
+              name={item.name}
+              key={item.name}
+            />
+          );
+        })}
     </div>
   );
 }

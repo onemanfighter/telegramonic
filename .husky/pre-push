@@ -1,0 +1,3 @@
+yarn lint:staged
+yarn prettier:staged
+yarn test
