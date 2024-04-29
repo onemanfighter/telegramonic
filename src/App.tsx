@@ -1,8 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import React from 'react';
-import { Outlet } from 'react-router-dom';
-import { LocalizationProvider } from './providers/LocalizationProvider';
-import { AppRouterProvider } from './providers/router_provider';
+import { AppRouterProvider, LocalizationProvider } from '@providers';
 import { appStore } from '@store';
 import { themeSelector, useShallow } from '@selectors';
 
