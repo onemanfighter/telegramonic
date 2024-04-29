@@ -2,6 +2,11 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "@assets": ["src/assets"],
+      "@router": ["src/router"],
+      "@components": ["src/components"],
+      "@screens": ["src/screens"],
+      "@screens/*": ["src/screens/*"],
       "@localization": ["src/localization"],
       "@providers": ["src/providers"],
       "@store": ["src/store"],
