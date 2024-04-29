@@ -1,5 +1,5 @@
-import { Suspense } from "react";
-import PageLoadingComponent from "./PageLoadingComponent";
+import { Suspense } from 'react';
+import PageLoadingComponent from './PageLoadingComponent';
 
 /**
  * Proptypes for the lazy component provider.
@@ -14,7 +14,7 @@ export interface ILazyComponentProviderProps {
  * @returns Ui component for the lazy component provider.
  */
 export default function LazyComponentProvider(
-  props: ILazyComponentProviderProps
+  props: ILazyComponentProviderProps,
 ) {
   return (
     <Suspense fallback={<PageLoadingComponent />}>{props.children}</Suspense>

@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 import {
   NavigationActiveStyle,
   NavigationInactiveStyle,
-} from "../styles/navbar/NavlinkComponentStyles";
+} from '../styles/navbar/NavlinkComponentStyles';
 
 /**
  * Proptypes for NavLinkComponent.

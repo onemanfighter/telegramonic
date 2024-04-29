@@ -2,12 +2,12 @@ import {
   Route,
   createBrowserRouter,
   createRoutesFromChildren,
-} from "react-router-dom";
-import App from "../App";
-import { lazy } from "react";
-import LazyComponentProvider from "../component/LazyProvider/LazyLoadingProvider";
+} from 'react-router-dom';
+import App from '../App';
+import { lazy } from 'react';
+import LazyComponentProvider from '../component/LazyProvider/LazyLoadingProvider';
 
-const MainPage = lazy(() => import("../pages/MainAppPage/MainPage"));
+const MainPage = lazy(() => import('../pages/MainAppPage/MainPage'));
 
 export const appRouter = createBrowserRouter(
   createRoutesFromChildren(
@@ -84,6 +84,6 @@ export const appRouter = createBrowserRouter(
           </LazyComponentProvider>
         }
       />
-    </Route>
-  )
+    </Route>,
+  ),
 );

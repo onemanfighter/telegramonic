@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function PrivacyPage() {
   return (
@@ -29,27 +29,25 @@ function PrivacyPage() {
       <h2>Our Cookie Policy</h2>
       <ul>
         <li>
-          {" "}
           Third party vendors, including Google, use cookies to serve ads based
-          on a user's prior visits to your website or other websites.
+          on a users prior visits to your website or other websites.
         </li>
         <li>
-          {" "}
-          Google's use of advertising cookies enables it and its partners to
+          Googles use of advertising cookies enables it and its partners to
           serve ads to your users based on their visit to your sites and/or
           other sites on the Internet.
         </li>
         <li>
-          {" "}
-          Users may opt out of personalized advertising by visiting{" "}
+          {' '}
+          Users may opt out of personalized advertising by visiting{' '}
           <a
             title="About ads"
             href="https://www.aboutads.info/"
-            rel="nofollow"
+            rel="nofollow noreferrer"
             target="_blank"
           >
             Ads Settings.
-          </a>{" "}
+          </a>{' '}
         </li>
       </ul>
       <h2>Links to Other Websites</h2>
@@ -60,14 +58,14 @@ function PrivacyPage() {
         policy agreement. Make sure to read the privacy policy documentation of
         the website you go to from our website. If you require any more
         information or have any questions about our privacy policy, please feel
-        free to contact us by email at{" "}
+        free to contact us by email at{' '}
         <a
           href="/cdn-cgi/l/email-protection"
           data-cfemail="63101613130c111723010610170c0517060f060411020e4d000c0e"
         >
           [email&#160;protected]
         </a>
-        . Last Updated: Jul 1, 2022.{" "}
+        . Last Updated: Jul 1, 2022.{' '}
       </p>
     </div>
   );
