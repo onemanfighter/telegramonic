@@ -1,11 +1,12 @@
+import { Box } from '@chakra-ui/react';
 import { Outlet } from 'react-router-dom';
 
 const MainScreen = () => {
   return (
-    <div>
+    <Box>
       <h1>Main Screen</h1>
       <Outlet />
-    </div>
+    </Box>
   );
 };
 

@@ -1,8 +1,5 @@
 import { AppStoreSlice } from '../../appStore/types';
-import { Theme, ThemeStateSlice } from '@store';
-import { ThemeState } from './types';
-
-const THEME = 'theme';
+import { Theme, ThemeStateSlice, ThemeState } from './types';
 
 const initialTheme: ThemeState = {
   themeValue: Theme.LIGHT,

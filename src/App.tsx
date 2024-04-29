@@ -1,7 +1,20 @@
-import { Outlet } from 'react-router-dom';
+import { ChakraProvider } from '@chakra-ui/react';
+import React from 'react';
+import { AppRouterProvider, LocalizationProvider } from '@providers';
+import { appStore } from '@store';
+import { themeSelector, useShallow } from '@selectors';
 
 const App = () => {
-  return <Outlet />;
+  const { theme } = appStore(useShallow(themeSelector));
+  return (
+    <ChakraProvider>
+      <React.StrictMode>
+        <LocalizationProvider>
+          <AppRouterProvider />
+        </LocalizationProvider>
+      </React.StrictMode>
+    </ChakraProvider>
+  );
 };
 
 export default App;
