@@ -1,4 +1,5 @@
 import { Box } from '@chakra-ui/react';
+import { AlertComponent } from '@components';
 import { Outlet } from 'react-router-dom';
 
 const MainScreen = () => {
