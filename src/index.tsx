@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { RouterProvider } from 'react-router-dom';
-import { appRouter } from './router/Router';
-import { LocalizationProvider } from './providers/LocalizationProvider';
+import { AppRouterProvider, LocalizationProvider } from '@providers';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -12,7 +10,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <LocalizationProvider>
-      <RouterProvider router={appRouter} />
+      <AppRouterProvider />
     </LocalizationProvider>
   </React.StrictMode>,
 );
