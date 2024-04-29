@@ -1,8 +1,9 @@
 import { StateCreator } from 'zustand';
-import { ThemeStateSlice } from '../slice';
+import { AlertStateSlice, ThemeStateSlice } from '../slice';
 
 export interface AppStoreState {
   Theme: ThemeStateSlice;
+  Alert: AlertStateSlice;
 }
 
 export type AppStoreSlice<T> = StateCreator<

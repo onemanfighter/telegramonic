@@ -1,6 +1,10 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import React from 'react';
-import { AppRouterProvider, LocalizationProvider } from '@providers';
+import {
+  AlertProvider,
+  AppRouterProvider,
+  LocalizationProvider,
+} from '@providers';
 import { appStore } from '@store';
 import { themeSelector, useShallow } from '@selectors';
 
@@ -10,7 +14,9 @@ const App = () => {
     <ChakraProvider>
       <React.StrictMode>
         <LocalizationProvider>
-          <AppRouterProvider />
+          <AlertProvider>
+            <AppRouterProvider />
+          </AlertProvider>
         </LocalizationProvider>
       </React.StrictMode>
     </ChakraProvider>
