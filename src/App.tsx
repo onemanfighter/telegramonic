@@ -4,6 +4,7 @@ import {
   AlertProvider,
   AppRouterProvider,
   LocalizationProvider,
+  ModalProvider,
 } from '@providers';
 import { appStore } from '@store';
 import { themeSelector, useShallow } from '@selectors';
@@ -15,7 +16,9 @@ const App = () => {
       <React.StrictMode>
         <LocalizationProvider>
           <AlertProvider>
-            <AppRouterProvider />
+            <ModalProvider>
+              <AppRouterProvider />
+            </ModalProvider>
           </AlertProvider>
         </LocalizationProvider>
       </React.StrictMode>
