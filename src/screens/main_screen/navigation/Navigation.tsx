@@ -1,4 +1,12 @@
-import { Box, Button, Divider, Hide, IconButton, Show } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Divider,
+  Hide,
+  IconButton,
+  Image,
+  Show,
+} from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
@@ -12,6 +20,7 @@ const Navigation = () => {
       opacity={0.5}
       flex={1}
       display={'flex'}
+      bgColor="blue.400"
       flexDirection={'row'}
       boxShadow={'2xl'}
       padding={2}
@@ -23,13 +32,18 @@ const Navigation = () => {
       <Box>
         <Button
           as={Link}
-          fontSize={'2xl'}
-          color="blue"
-          bgGradient={'linear(to-r, yellow.200, blue.400)'}
-          transition="all 0.2s"
+          height={12}
           to="/"
+          variant={'outline'}
+          _hover={{ bg: 'blue.200' }}
+          bgColor="white"
         >
-          {t('Navigation.appName')}
+          <Image
+            width={220}
+            src={require('@assets/images/LogoNoBackground.png')}
+            alt="logo"
+            loading="lazy"
+          />
         </Button>
       </Box>
       <Hide below="md">

@@ -1,4 +1,5 @@
 import {
+  AbsoluteCenter,
   Box,
   Divider,
   Grid,
@@ -18,6 +19,7 @@ const Footer = () => {
       height={'100'}
       opacity={0.5}
       flex={1}
+      bgColor="blue.100"
       display={'flex'}
       padding={4}
       flexDirection={'column'}

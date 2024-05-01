@@ -6,7 +6,14 @@ import { NavLinkButtonProps } from './types';
 const NavLinkButton = ({ titleStringKey, path }: NavLinkButtonProps) => {
   const { t } = useTranslation();
   return (
-    <Button margin={1} variant="outline" size={'sm'} as={Link} to={path}>
+    <Button
+      margin={1}
+      variant="outline"
+      size={'sm'}
+      as={Link}
+      to={path}
+      borderColor="blue.400"
+    >
       {t(`${titleStringKey}`)}
     </Button>
   );

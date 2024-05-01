@@ -27,8 +27,8 @@ const NavBarButtons = ({ fullWidth }: { fullWidth: boolean }) => {
             fontSize={'lg'}
             as={Link}
             transition="all 0.2s"
-            bgGradient={'linear(to-r, blue.200, gray.500)'}
             to={navItem.path}
+            variant={fullWidth ? 'solid' : 'outline'}
             key={navItem.titleStringKey}
           >
             {t(`${navItem.titleStringKey}`)}
@@ -39,7 +39,7 @@ const NavBarButtons = ({ fullWidth }: { fullWidth: boolean }) => {
             fontSize={'lg'}
             as={Link}
             transition="all 0.2s"
-            bgGradient={'linear(to-r, blue.200, gray.500)'}
+            variant={'outline'}
             to={navItem.path}
             key={navItem.titleStringKey}
             rightIcon={<FiChevronDown />}

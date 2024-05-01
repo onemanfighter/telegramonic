@@ -11,8 +11,8 @@ const MenuPopover = ({ children, triggerComponent }: PopOverProps) => {
   return (
     <Popover placement="bottom" closeOnBlur={true}>
       <PopoverTrigger>{triggerComponent}</PopoverTrigger>
-      <PopoverContent color="white" bg="blue.800" borderColor="blue.800">
-        <PopoverArrow bg="blue.800" paddingBottom={2} />
+      <PopoverContent color="white" borderColor="blue.800">
+        <PopoverArrow paddingBottom={2} />
         <Box padding={2} width={'100%'}>
           {children}
         </Box>
