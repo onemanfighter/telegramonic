@@ -6,20 +6,20 @@ import {
   LocalizationProvider,
   ModalProvider,
 } from '@providers';
-import { appStore } from '@store';
-import { themeSelector, useShallow } from '@selectors';
+import { DrawerProvider } from './providers/drawer_provider';
 
 const App = () => {
-  const { theme } = appStore(useShallow(themeSelector));
   return (
     <ChakraProvider>
       <React.StrictMode>
         <LocalizationProvider>
-          <AlertProvider>
-            <ModalProvider>
-              <AppRouterProvider />
-            </ModalProvider>
-          </AlertProvider>
+          <DrawerProvider>
+            <AlertProvider>
+              <ModalProvider>
+                <AppRouterProvider />
+              </ModalProvider>
+            </AlertProvider>
+          </DrawerProvider>
         </LocalizationProvider>
       </React.StrictMode>
     </ChakraProvider>
