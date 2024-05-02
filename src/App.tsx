@@ -1,18 +1,15 @@
-import { ChakraProvider } from '@chakra-ui/react';
 import React from 'react';
 import {
   AlertProvider,
   AppRouterProvider,
   LocalizationProvider,
   ModalProvider,
+  ThemeProvider,
 } from '@providers';
-import { appStore } from '@store';
-import { themeSelector, useShallow } from '@selectors';
 
 const App = () => {
-  const { theme } = appStore(useShallow(themeSelector));
   return (
-    <ChakraProvider>
+    <ThemeProvider>
       <React.StrictMode>
         <LocalizationProvider>
           <AlertProvider>
@@ -22,7 +19,7 @@ const App = () => {
           </AlertProvider>
         </LocalizationProvider>
       </React.StrictMode>
-    </ChakraProvider>
+    </ThemeProvider>
   );
 };
 
