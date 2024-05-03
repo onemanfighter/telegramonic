@@ -6,6 +6,7 @@ import {
   createThemeSlice,
   createAlertSlice,
   createModalSlice,
+  createDrawerSlice,
 } from '@store/slice';
 
 export const appStore = create<AppStoreState>()(
@@ -13,5 +14,6 @@ export const appStore = create<AppStoreState>()(
     Theme: createThemeSlice(...api),
     Alert: createAlertSlice(...api),
     Modal: createModalSlice(...api),
+    Drawer: createDrawerSlice(...api),
   })),
 );
