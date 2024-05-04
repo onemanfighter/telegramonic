@@ -6,17 +6,20 @@ import {
   ModalProvider,
   ThemeProvider,
 } from '@providers';
+import { DrawerProvider } from './providers/drawer_provider';
 
 const App = () => {
   return (
     <ThemeProvider>
       <React.StrictMode>
         <LocalizationProvider>
-          <AlertProvider>
-            <ModalProvider>
-              <AppRouterProvider />
-            </ModalProvider>
-          </AlertProvider>
+          <DrawerProvider>
+            <AlertProvider>
+              <ModalProvider>
+                <AppRouterProvider />
+              </ModalProvider>
+            </AlertProvider>
+          </DrawerProvider>
         </LocalizationProvider>
       </React.StrictMode>
     </ThemeProvider>
