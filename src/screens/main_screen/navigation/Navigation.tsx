@@ -6,6 +6,7 @@ import {
   Image,
   Show,
   useColorMode,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
@@ -15,7 +16,6 @@ import { FaMoon, FaSun } from 'react-icons/fa';
 
 const Navigation = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-
   return (
     <Box
       opacity={0.5}
@@ -24,7 +24,8 @@ const Navigation = () => {
       bgColor={'blue.500'}
       flexDirection={'row'}
       boxShadow={'2xl'}
-      padding={2}
+      paddingX={6}
+      paddingY={2}
       position={'sticky'}
       top={0}
       justifyContent={'space-between'}
@@ -53,16 +54,15 @@ const Navigation = () => {
       <IconButton
         width={12}
         onClick={toggleColorMode}
-        variant={'outline'}
+        variant={'ghost'}
         icon={
           colorMode === 'light' ? (
-            <FaMoon color="black" />
+            <FaMoon size={24} color="black" />
           ) : (
-            <FaSun color="yellow" />
+            <FaSun size={24} color="yellow" />
           )
         }
         aria-label={colorMode === 'light' ? 'light-mode' : 'dark-mode'}
-        color={colorMode === 'light' ? 'white.500' : 'black.500'}
       />
       <Show below="md">
         <MenuPopover
@@ -71,6 +71,7 @@ const Navigation = () => {
               icon={<FiMenu />}
               fontSize={'lg'}
               marginRight={2}
+              color={useColorModeValue('black', 'white')}
               transition="all 0.2s"
               bgColor={'blue.100'}
               aria-label="nav-menu"

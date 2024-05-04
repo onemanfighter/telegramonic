@@ -28,7 +28,14 @@ const NavBarButtons = ({ fullWidth }: { fullWidth: boolean }) => {
             as={Link}
             transition="all 0.2s"
             to={navItem.path}
-            variant={fullWidth ? 'solid' : 'outline'}
+            color="black"
+            textColor="white"
+            _hover={{
+              bgColor: 'white',
+              textColor: 'black',
+              borderColor: 'black',
+            }}
+            variant="ghost"
             key={navItem.titleStringKey}
           >
             {t(`${navItem.titleStringKey}`)}
@@ -39,7 +46,13 @@ const NavBarButtons = ({ fullWidth }: { fullWidth: boolean }) => {
             fontSize={'lg'}
             as={Link}
             transition="all 0.2s"
-            variant={'outline'}
+            textColor="white"
+            _hover={{
+              bgColor: 'white',
+              textColor: 'black',
+              borderColor: 'black',
+            }}
+            variant="ghost"
             to={navItem.path}
             key={navItem.titleStringKey}
             rightIcon={<FiChevronDown />}
@@ -48,7 +61,7 @@ const NavBarButtons = ({ fullWidth }: { fullWidth: boolean }) => {
           </Button>
         );
       })}
-      {!fullWidth && <OthersButton fullWidth />}
+      {!fullWidth && <OthersButton />}
     </Box>
   );
 };

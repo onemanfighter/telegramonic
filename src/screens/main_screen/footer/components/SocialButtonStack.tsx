@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, HStack } from '@chakra-ui/react';
+import { Button, ButtonGroup, HStack, IconButton } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
@@ -7,15 +7,24 @@ const SocialButtonStack = () => {
   return (
     <HStack>
       <ButtonGroup variant="outline" spacing="6" gap={2}>
-        <Button colorScheme="facebook" leftIcon={<FaFacebook />}>
-          {t('Footer.social.facebook')}
-        </Button>
-        <Button colorScheme="twitter" leftIcon={<FaTwitter />}>
-          {t('Footer.social.twitter')}
-        </Button>
-        <Button colorScheme="pink" leftIcon={<FaInstagram />}>
-          {t('Footer.social.instagram')}
-        </Button>
+        <IconButton
+          color={'blue'}
+          bgColor={'white'}
+          icon={<FaFacebook />}
+          aria-label="facebook-button"
+        ></IconButton>
+        <IconButton
+          color={'blue.500'}
+          bgColor={'white'}
+          icon={<FaTwitter />}
+          aria-label="twitter-button"
+        ></IconButton>
+        <IconButton
+          color={'pink.600'}
+          bgColor={'white'}
+          icon={<FaInstagram />}
+          aria-label="instagram-button"
+        ></IconButton>
       </ButtonGroup>
     </HStack>
   );
