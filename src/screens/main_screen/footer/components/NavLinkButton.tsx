@@ -12,7 +12,14 @@ const NavLinkButton = ({ titleStringKey, path }: NavLinkButtonProps) => {
       size={'sm'}
       as={Link}
       to={path}
-      borderColor="blue.400"
+      _hover={{
+        bgColor: 'white',
+        textColor: 'blue.800',
+        borderColor: 'blue.800',
+      }}
+      bgColor={'white'}
+      textColor={'blue.400'}
+      transition="all 0.2s"
     >
       {t(`${titleStringKey}`)}
     </Button>

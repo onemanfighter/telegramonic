@@ -17,6 +17,6 @@ const themeData = {
   zIndices: { ...zIndices },
 };
 
-const theme = extendTheme({ themeData });
+const theme = extendTheme(themeData);
 
 export default theme;

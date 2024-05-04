@@ -1,10 +1,11 @@
 import {
-  AbsoluteCenter,
   Box,
   Divider,
   Grid,
   GridItem,
+  Hide,
   Link,
+  Show,
   Text,
   VStack,
 } from '@chakra-ui/react';
@@ -16,33 +17,28 @@ const Footer = () => {
   const { t } = useTranslation();
   return (
     <Box
-      height={'100'}
       opacity={0.5}
       flex={1}
-      bgColor="blue.100"
+      bgColor="blue.300"
       display={'flex'}
       padding={4}
       flexDirection={'column'}
     >
-      <Divider marginBottom={5} />
       <VStack>
-        <Grid
-          templateColumns="repeat(4, 1fr)"
-          gap={6}
-          flexDirection={'row'}
-          justifyContent={'center'}
-        >
+        <Grid templateColumns="repeat(4, 1fr)" gap={6}>
           <GridItem colSpan={1}>
-            <Text fontSize={'md'} transition="all 0.2s">
-              {t('Footer.websiteText')}
-            </Text>
+            <Hide below="md">
+              <Text fontSize={'md'} color="black" transition="all 0.2s">
+                {t('Footer.websiteText')}
+              </Text>
+            </Hide>
           </GridItem>
           <GridItem colSpan={1}>
-            <Text fontSize={'large'} color="blue" paddingStart={3}>
+            <Text fontSize={'large'} color="blue.900" paddingStart={3}>
               {t('Footer.media.title')}
             </Text>
-            <NavLinkButton titleStringKey={'Footer.media.top'} path={'/top'} />
             <Divider />
+            <NavLinkButton titleStringKey={'Footer.media.top'} path={'/top'} />
             <NavLinkButton
               titleStringKey={'Footer.media.channels'}
               path={'/channels'}
@@ -57,14 +53,14 @@ const Footer = () => {
             />
           </GridItem>
           <GridItem colSpan={1}>
-            <Text fontSize={'large'} color="blue" paddingStart={3}>
+            <Text fontSize={'large'} color="blue.900" paddingStart={3}>
               {t('Footer.reachUs.title')}
             </Text>
+            <Divider />
             <NavLinkButton
               titleStringKey={'Footer.reachUs.feature'}
               path={'/feature'}
             />
-            <Divider />
             <NavLinkButton
               titleStringKey={'Footer.reachUs.contact'}
               path={'/contact'}
@@ -75,9 +71,10 @@ const Footer = () => {
             />
           </GridItem>
           <GridItem colSpan={1}>
-            <Text fontSize={'large'} color="blue" paddingStart={3}>
+            <Text fontSize={'large'} color="blue.900" paddingStart={3}>
               {t('Footer.staticOthers.title')}
             </Text>
+            <Divider />
             <NavLinkButton
               titleStringKey={'Footer.staticOthers.privacy'}
               path={'/privacy'}
@@ -93,13 +90,25 @@ const Footer = () => {
           </GridItem>
         </Grid>
         <Box paddingY={2}>
+          <Show below="md">
+            <Divider />
+            <Text
+              fontSize={'sm'}
+              color="black"
+              transition="all 0.2s"
+              paddingStart={3}
+              paddingBottom={10}
+            >
+              {t('Footer.websiteText')}
+            </Text>
+          </Show>
           <Divider />
-          <Text fontSize={'md'} color="blue.600" paddingStart={3}>
+          <Text fontSize={'md'} color="black" paddingStart={3}>
             {t('Footer.disclaimer')}
             <Link
               as={reactRouterLink}
               to="/contact"
-              color={'teal'}
+              color={'blue'}
               fontStyle={'oblique'}
               paddingStart={2}
             >
@@ -108,9 +117,11 @@ const Footer = () => {
           </Text>
           <Divider />
         </Box>
-        <Box>
-          <SocialButtonStack />
-        </Box>
+        <SocialButtonStack />
+        <Divider />
+        <Text fontSize={'md'} color="black" paddingStart={3}>
+          {t('Footer.copyRight')}
+        </Text>
       </VStack>
     </Box>
   );

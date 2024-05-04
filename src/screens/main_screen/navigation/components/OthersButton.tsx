@@ -7,7 +7,7 @@ import { NAVIGATION } from '../constants';
 import { NavigationButton } from '../types';
 import { boxProps, buttonNonFullWidthProps } from './constants';
 
-const OthersButton = ({ fullWidth }: { fullWidth: boolean }) => {
+const OthersButton = () => {
   return (
     <MenuPopover
       triggerComponent={
@@ -15,8 +15,15 @@ const OthersButton = ({ fullWidth }: { fullWidth: boolean }) => {
           {...buttonNonFullWidthProps}
           fontSize={'lg'}
           transition="all 0.2s"
-          bgGradient={'linear(to-r, blue.200, gray.500)'}
+          variant={'outline'}
+          textColor="white"
+          _hover={{
+            bgColor: 'white',
+            textColor: 'black',
+            borderColor: 'black',
+          }}
           rightIcon={<FiChevronDown />}
+          transform="all 0.2s"
         >
           {t(`Navigation.others`)}
         </Button>
@@ -30,7 +37,9 @@ const OthersButton = ({ fullWidth }: { fullWidth: boolean }) => {
               marginY={1}
               as={Link}
               transition="all 0.2s"
-              bgGradient={'linear(to-r, blue.200, gray.500)'}
+              variant={'outline'}
+              color="black"
+              bgColor={'white'}
               to={navItem.path}
               key={navItem.titleStringKey}
             >
