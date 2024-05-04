@@ -1,10 +1,9 @@
 import { AlertComponentState, DrawerState, appStore } from '@store';
 import { act, renderHook } from '@testing-library/react';
-import { drawerSelector } from '../Drawer.selector';
 
 jest.useFakeTimers();
 
-describe('Drawer selector', () => {
+describe('Drawer slice', () => {
   const onDrawerCloseMock = jest.fn();
   const drawerData: DrawerState['drawerData'] = {
     title: 'title',
@@ -13,42 +12,44 @@ describe('Drawer selector', () => {
     footer: <div>footer </div>,
     onModalClose: onDrawerCloseMock,
   };
+
   it('should return drawer selector state and actions', () => {
-    const drawer = renderHook(() => appStore(drawerSelector)).result.current;
+    const drawer = renderHook(() => appStore()).result.current;
 
     expect(drawer).toMatchSnapshot();
   });
 
   it('should return drawer state with initial value', () => {
-    const { result } = renderHook(() => appStore(drawerSelector));
+    const { result } = renderHook(() => appStore());
 
-    expect(result.current.drawerData).toMatchSnapshot();
+    expect(result.current.Drawer.drawerData).toMatchSnapshot();
   });
 
   it('should return drawer state on drawer data set using openDrawer', () => {
-    const { result } = renderHook(() => appStore(drawerSelector));
+    const { result } = renderHook(() => appStore());
 
     act(() => {
-      result.current.openDrawer(drawerData);
+      result.current.Drawer.openDrawer(drawerData);
     });
 
-    expect(result.current.drawerData).toMatchSnapshot();
+    expect(result.current.Drawer.drawerData).toMatchSnapshot();
   });
 
   it('should reset and close drawer state on drawer data set using closeDrawer', () => {
-    const { result } = renderHook(() => appStore(drawerSelector));
+    const { result } = renderHook(() => appStore());
 
     act(() => {
-      result.current.openDrawer(drawerData);
+      result.current.Drawer.openDrawer(drawerData);
     });
-    expect(result.current.drawerData.isOpen).toBeTruthy();
+    expect(result.current.Drawer.drawerData.isOpen).toBeTruthy();
 
     act(() => {
-      result.current.closeDrawer();
+      result.current.Drawer.closeDrawer();
       jest.runAllTimers();
     });
 
-    expect(result.current.drawerData.title).toEqual('');
-    expect(result.current.drawerData.isOpen).toBeFalsy();
+    const { isOpen, title } = result.current.Drawer.drawerData;
+    expect(title).toEqual('');
+    expect(isOpen).toBeFalsy();
   });
 });
