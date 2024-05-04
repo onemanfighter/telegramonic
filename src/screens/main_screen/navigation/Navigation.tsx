@@ -1,26 +1,27 @@
 import {
   Box,
   Button,
-  Divider,
   Hide,
   IconButton,
   Image,
   Show,
+  useColorMode,
 } from '@chakra-ui/react';
-import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
 import { MenuPopover } from '@components';
 import { NavBarButtons } from './components';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 const Navigation = () => {
-  const { t } = useTranslation();
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Box
       opacity={0.5}
       flex={1}
       display={'flex'}
-      bgColor="blue.400"
+      bgColor={'blue.500'}
       flexDirection={'row'}
       boxShadow={'2xl'}
       padding={2}
@@ -35,7 +36,7 @@ const Navigation = () => {
           height={12}
           to="/"
           variant={'outline'}
-          _hover={{ bg: 'blue.200' }}
+          colorScheme="red"
           bgColor="white"
         >
           <Image
@@ -49,6 +50,20 @@ const Navigation = () => {
       <Hide below="md">
         <NavBarButtons fullWidth={false} />
       </Hide>
+      <IconButton
+        width={12}
+        onClick={toggleColorMode}
+        variant={'outline'}
+        icon={
+          colorMode === 'light' ? (
+            <FaMoon color="black" />
+          ) : (
+            <FaSun color="yellow" />
+          )
+        }
+        aria-label={colorMode === 'light' ? 'light-mode' : 'dark-mode'}
+        color={colorMode === 'light' ? 'white.500' : 'black.500'}
+      />
       <Show below="md">
         <MenuPopover
           triggerComponent={
@@ -58,7 +73,6 @@ const Navigation = () => {
               marginRight={2}
               transition="all 0.2s"
               bgColor={'blue.100'}
-              color={'gray.500'}
               aria-label="nav-menu"
             />
           }
