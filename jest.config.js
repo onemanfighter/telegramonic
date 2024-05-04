@@ -10,6 +10,10 @@ module.exports = {
   collectCoverageFrom: ['src/*.tsx', 'src/**/*.tsx'],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
   moduleDirectories: ['node_modules', 'src'],
+  moduleNameMapper: {
+    '@/(.*)': '<rootDir>/src/*',
+    '@store/slice': '<rootDir>/src/store/slice',
+  },
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': 'ts-jest',
   },
