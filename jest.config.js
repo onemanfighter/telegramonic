@@ -13,6 +13,8 @@ module.exports = {
   moduleNameMapper: {
     '@store/slice': '<rootDir>/src/store/slice',
     '@store': '<rootDir>/src/store',
+    '@components': '<rootDir>/src/components',
+    '@selectors': '<rootDir>/src/store/selectors',
   },
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': 'ts-jest',

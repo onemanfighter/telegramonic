@@ -24,6 +24,7 @@ const createDrawerSlice: AppStoreSlice<DrawerStateSlice> = (set) => ({
     set((state) => {
       state.Drawer.openState = DrawerOpenState.CLOSE;
     });
+
     setTimeout(() => {
       set((state) => {
         state.Drawer.drawerData = initialAlertState.drawerData;

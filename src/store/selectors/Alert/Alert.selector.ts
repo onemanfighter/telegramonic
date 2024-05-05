@@ -12,7 +12,7 @@ const AlertSelector = (state: AppStoreState) => ({
     state.Alert.setAlertVisible(true);
     setTimeout(() => {
       state.Alert.setAlertVisible(false);
-    }, time / 1000);
+    }, time * 1000);
   },
 });
 
