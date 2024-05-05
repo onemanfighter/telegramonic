@@ -2,7 +2,7 @@ name: Deploy website on push to Telegramonic.com
 
 on:
   push:
-    branches: ['development']
+    branches: ['production']
 
 jobs:
   setup_and_deploy:
