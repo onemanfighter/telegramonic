@@ -11,9 +11,10 @@ const DrawerProvider = ({ children }: DrawerProviderProps) => {
     useShallow(drawerSelector),
   );
   const onModalClose = () => {
-    onClose();
     closeDrawer();
+    onClose();
   };
+
   useEffect(() => {
     if (openState === DrawerOpenState.OPEN) {
       onOpen();
