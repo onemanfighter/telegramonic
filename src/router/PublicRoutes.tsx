@@ -15,6 +15,7 @@ import {
   LazyGroupsScreen,
   LazyHomeScreen,
   LazyPrivacyPolicyScreen,
+  LazySearchScreen,
   LazyStickersScreen,
   LazyThemesScreen,
 } from './lazy_screen';
@@ -26,6 +27,8 @@ const publicRouter = createBrowserRouter(
       {/* Main screen routes. */}
       <Route path="" element={<Navigate to="/home" replace />} />
       <Route path="home" element={<LazyHomeScreen />} />
+      {/* Main flow screen routes. */}
+      <Route path="search" element={<LazySearchScreen />} />
       <Route path="channels" element={<LazyChannelScreen />} />
       <Route path="groups" element={<LazyGroupsScreen />} />
       <Route path="sticker" element={<LazyStickersScreen />} />

@@ -9,6 +9,7 @@ const Groups = lazy(() => import('@screens/main_flow/groups/Groups'));
 const Home = lazy(() => import('@screens/main_flow/home/Home'));
 const Stickers = lazy(() => import('@screens/main_flow/stickers/Stickers'));
 const Themes = lazy(() => import('@screens/main_flow/themes/Themes'));
+const Search = lazy(() => import('@screens/main_flow/search/Search'));
 
 const LazyBlogsScreen = () => {
   return (
@@ -74,6 +75,14 @@ const LazyThemesScreen = () => {
   );
 };
 
+const LazySearchScreen = () => {
+  return (
+    <LazyComponentProvider>
+      <Search />
+    </LazyComponentProvider>
+  );
+};
+
 export {
   LazyBlogsScreen,
   LazyBotsScreen,
@@ -83,4 +92,5 @@ export {
   LazyHomeScreen,
   LazyStickersScreen,
   LazyThemesScreen,
+  LazySearchScreen,
 };

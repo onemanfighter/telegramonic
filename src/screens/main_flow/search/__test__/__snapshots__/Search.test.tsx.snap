@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search screen should render Search screen 1`] = `
+<div>
+  <div
+    class="css-0"
+  >
+    <p
+      class="chakra-text css-0"
+    >
+      Search
+    </p>
+  </div>
+</div>
+`;
