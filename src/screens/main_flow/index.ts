@@ -6,3 +6,4 @@ export * from './groups';
 export * from './home';
 export * from './stickers';
 export * from './themes';
+export * from './search';

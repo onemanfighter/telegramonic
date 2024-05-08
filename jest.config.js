@@ -11,12 +11,17 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
   moduleDirectories: ['node_modules', 'src'],
   moduleNameMapper: {
+    '@assets/(.*)': '<rootDir>/src/assets/$1',
+    '@screens': '<rootDir>/src/screens',
     '@store/slice': '<rootDir>/src/store/slice',
     '@store': '<rootDir>/src/store',
     '@components': '<rootDir>/src/components',
     '@selectors': '<rootDir>/src/store/selectors',
+    '@providers': '<rootDir>/src/providers',
+    '@router': '<rootDir>/src/router',
   },
   transform: {
+    '.+\\.(css|scss|png|jpg|svg)$': 'jest-transform-stub',
     '^.+\\.(js|jsx|ts|tsx)$': 'ts-jest',
   },
   // coverageThreshold: {
