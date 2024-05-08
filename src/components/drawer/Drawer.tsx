@@ -20,7 +20,7 @@ const DrawerComponent = ({
     <Drawer isOpen={isOpen} placement="right" onClose={onModalClose}>
       <DrawerOverlay />
       <DrawerContent>
-        <DrawerCloseButton />
+        <DrawerCloseButton aria-label="close-button" />
         <DrawerHeader>{title}</DrawerHeader>
 
         <DrawerBody>

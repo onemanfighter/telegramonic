@@ -19,6 +19,7 @@ const NavBarButtons = ({ fullWidth }: { fullWidth: boolean }) => {
     <Box
       {...(fullWidth && boxProps)}
       flexDirection={fullWidth ? 'column' : 'row'}
+      zIndex={1000}
     >
       {navigationList.map((navItem: NavigationButton) => {
         return !navItem.subNavigations ? (
@@ -37,6 +38,7 @@ const NavBarButtons = ({ fullWidth }: { fullWidth: boolean }) => {
             }}
             variant="ghost"
             key={navItem.titleStringKey}
+            zIndex={1000}
           >
             {t(`${navItem.titleStringKey}`)}
           </Button>
@@ -56,6 +58,7 @@ const NavBarButtons = ({ fullWidth }: { fullWidth: boolean }) => {
             to={navItem.path}
             key={navItem.titleStringKey}
             rightIcon={<FiChevronDown />}
+            zIndex={1000}
           >
             {t(`${navItem.titleStringKey}`)}
           </Button>

@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  HStack,
   Hide,
   IconButton,
   Image,
@@ -12,7 +13,7 @@ import { Link } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
 import { MenuPopover } from '@components';
 import { NavBarButtons } from './components';
-import { FaMoon, FaSun } from 'react-icons/fa';
+import { FaMoon, FaSearch, FaSun } from 'react-icons/fa';
 
 const Navigation = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -21,7 +22,7 @@ const Navigation = () => {
       opacity={0.5}
       flex={1}
       display={'flex'}
-      bgColor={'blue.500'}
+      bgColor={'blue.600'}
       flexDirection={'row'}
       boxShadow={'2xl'}
       paddingX={6}
@@ -30,40 +31,49 @@ const Navigation = () => {
       top={0}
       justifyContent={'space-between'}
       alignItems={'center'}
+      zIndex={1000}
     >
-      <Box>
-        <Button
-          as={Link}
-          height={12}
-          to="/"
-          variant={'outline'}
-          colorScheme="red"
-          bgColor="white"
-        >
-          <Image
-            width={220}
-            src={require('@assets/images/LogoNoBackground.png')}
-            alt="logo"
-            loading="lazy"
-          />
-        </Button>
-      </Box>
+      <Button
+        as={Link}
+        height={12}
+        to="/"
+        variant={'outline'}
+        colorScheme="red"
+        bgColor="white"
+      >
+        <Image
+          width={220}
+          src={require('@assets/images/LogoNoBackground.png')}
+          alt="logo"
+          loading="lazy"
+        />
+      </Button>
       <Hide below="md">
         <NavBarButtons fullWidth={false} />
       </Hide>
-      <IconButton
-        width={12}
-        onClick={toggleColorMode}
-        variant={'ghost'}
-        icon={
-          colorMode === 'light' ? (
-            <FaMoon size={24} color="black" />
-          ) : (
-            <FaSun size={24} color="yellow" />
-          )
-        }
-        aria-label={colorMode === 'light' ? 'light-mode' : 'dark-mode'}
-      />
+      <HStack spacing={4}>
+        <IconButton
+          width={12}
+          as={Link}
+          to="/search"
+          variant={'ghost'}
+          icon={<FaSearch size={24} color="white" />}
+          aria-label={'search-icon-button'}
+        />
+        <IconButton
+          width={12}
+          onClick={toggleColorMode}
+          variant={'ghost'}
+          icon={
+            colorMode === 'light' ? (
+              <FaMoon size={24} color="white" />
+            ) : (
+              <FaSun size={24} color="yellow" />
+            )
+          }
+          aria-label={colorMode === 'light' ? 'light-mode' : 'dark-mode'}
+        />
+      </HStack>
       <Show below="md">
         <MenuPopover
           triggerComponent={
