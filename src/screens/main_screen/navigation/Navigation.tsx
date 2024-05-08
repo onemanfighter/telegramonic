@@ -31,6 +31,7 @@ const Navigation = () => {
       top={0}
       justifyContent={'space-between'}
       alignItems={'center'}
+      zIndex={1000}
     >
       <Button
         as={Link}

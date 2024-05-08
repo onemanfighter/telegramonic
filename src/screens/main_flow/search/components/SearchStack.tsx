@@ -22,7 +22,7 @@ const SearchStack = ({ onSearchClick }: SearchStackProps) => {
     <Box
       flex={1}
       flexDirection={'column'}
-      padding={2}
+      margin={2}
       alignContent={'center'}
       textShadow={'lg'}
       borderRadius={'lg'}
