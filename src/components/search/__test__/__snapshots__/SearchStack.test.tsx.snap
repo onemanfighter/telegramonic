@@ -42,7 +42,7 @@ exports[`SearchStack should render correctly 1`] = `
         </div>
         <input
           class="chakra-input css-0"
-          placeholder="Search.searchInputPlaceholder"
+          placeholder="Search for channels, groups, bots, stickers, themes, games and more..."
           type="text"
         />
       </div>
@@ -57,7 +57,7 @@ exports[`SearchStack should render correctly 1`] = `
         <span
           class="css-xl71ch"
         >
-          Search.searchCategory.placeholder
+          Select category
         </span>
         <span
           class="chakra-button__icon css-1hzyiq5"
@@ -99,7 +99,7 @@ exports[`SearchStack should render correctly 1`] = `
             tabindex="-1"
             type="button"
           >
-            Search.searchCategory.options.all
+            All
           </button>
           <button
             class="chakra-menu__menuitem css-1k756t9"
@@ -109,7 +109,7 @@ exports[`SearchStack should render correctly 1`] = `
             tabindex="-1"
             type="button"
           >
-            Search.searchCategory.options.bots
+            Bots
           </button>
           <button
             class="chakra-menu__menuitem css-1k756t9"
@@ -119,7 +119,7 @@ exports[`SearchStack should render correctly 1`] = `
             tabindex="-1"
             type="button"
           >
-            Search.searchCategory.options.channels
+            Channels
           </button>
           <button
             class="chakra-menu__menuitem css-1k756t9"
@@ -129,7 +129,7 @@ exports[`SearchStack should render correctly 1`] = `
             tabindex="-1"
             type="button"
           >
-            Search.searchCategory.options.groups
+            Groups
           </button>
           <button
             class="chakra-menu__menuitem css-1k756t9"
@@ -139,7 +139,7 @@ exports[`SearchStack should render correctly 1`] = `
             tabindex="-1"
             type="button"
           >
-            Search.searchCategory.options.stickers
+            Stickers
           </button>
           <button
             class="chakra-menu__menuitem css-1k756t9"
@@ -149,7 +149,7 @@ exports[`SearchStack should render correctly 1`] = `
             tabindex="-1"
             type="button"
           >
-            Search.searchCategory.options.themes
+            Themes
           </button>
         </div>
       </div>
@@ -157,7 +157,7 @@ exports[`SearchStack should render correctly 1`] = `
         class="chakra-button css-un5p2g"
         type="button"
       >
-        Search.searchButton
+        Search
       </button>
     </div>
   </div>

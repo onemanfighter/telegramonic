@@ -14,7 +14,7 @@ describe('SearchStack', () => {
 
   it('should call onSearchClick when search button is clicked', () => {
     render(<SearchStack onSearchClick={onSearchClick} />);
-    const searchButton = screen.getByText('Search.searchButton');
+    const searchButton = screen.getByText('Search');
     searchButton.click();
 
     expect(onSearchClick).toHaveBeenCalled();
