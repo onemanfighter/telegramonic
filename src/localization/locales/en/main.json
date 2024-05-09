@@ -63,5 +63,8 @@
       "placeholder": "Select category"
     },
     "searchInputPlaceholder": "Search for channels, groups, bots, stickers, themes, games and more..."
+  },
+  "MainHomeScreen": {
+    "browseOurCategories": "Browse our categories"
   }
 }

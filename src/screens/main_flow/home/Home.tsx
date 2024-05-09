@@ -1,5 +1,5 @@
 import { SearchStack } from '@components';
-import { HomeHeaderComponent } from './component';
+import { BrowseOurCategories, HomeHeaderComponent } from './component';
 import { Box } from '@chakra-ui/react';
 
 const Home = () => {
@@ -15,6 +15,7 @@ const Home = () => {
           onSearchClick('searchText');
         }}
       />
+      <BrowseOurCategories />
     </Box>
   );
 };
