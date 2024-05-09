@@ -11,12 +11,12 @@ exports[`HomeHeaderComponent should render correctly 1`] = `
       <p
         class="chakra-text css-x3elb1"
       >
-        Home.header.title
+        Discover the best of Telegram on Telegramonic.com
       </p>
       <p
         class="chakra-text css-1uf6a8x"
       >
-        Home.header.subTitle
+        Find the best channels, groups, bots, stickers, themes, games and more on Telegramonic.com
       </p>
     </div>
   </div>

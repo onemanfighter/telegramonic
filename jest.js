@@ -1,1 +1,1 @@
-// import '@localization/config';
+import '@localization/config';

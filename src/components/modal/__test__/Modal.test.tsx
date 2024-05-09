@@ -47,7 +47,7 @@ describe('Modal', () => {
       />,
     );
 
-    fireEvent.click(screen.getByText('close'));
+    fireEvent.click(screen.getByText('Close'));
 
     expect(onModalClose).toHaveBeenCalledTimes(1);
   });
