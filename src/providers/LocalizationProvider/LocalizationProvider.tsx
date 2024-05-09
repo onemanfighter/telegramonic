@@ -1,5 +1,5 @@
 import { LocalizationProviderProps } from './types';
-import '../../localization/config';
+import '@localization/config';
 
 const LocalizationProvider = ({ children }: LocalizationProviderProps) => {
   return <>{children}</>;

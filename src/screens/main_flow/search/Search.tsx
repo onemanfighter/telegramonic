@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import { SearchProps } from './types';
-import { SearchStack } from './components';
+import { SearchStack } from '@components';
 
 const Search = (props: SearchProps) => {
   const onSearchClick = () => {
