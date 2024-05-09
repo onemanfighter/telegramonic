@@ -13,7 +13,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { FaChevronDown } from 'react-icons/fa';
 import { FiSearch } from 'react-icons/fi';
-import { SearchCategoryItems } from '../constants';
+import { SearchCategoryItems } from '../../screens/main_flow/search/constants';
 import { SearchStackProps } from './types';
 
 const SearchStack = ({ onSearchClick }: SearchStackProps) => {

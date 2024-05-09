@@ -1,4 +1,10 @@
 {
+  "Home": {
+    "header": {
+      "title": "Discover the best of Telegram on Telegramonic.com",
+      "subTitle": "Find the best channels, groups, bots, stickers, themes, games and more on Telegramonic.com"
+    }
+  },
   "Navigation": {
     "appName": "Telegramonic.com",
     "navButton": {
